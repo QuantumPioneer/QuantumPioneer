@@ -1,0 +1,73 @@
+%chk=rxn_11889.chk
+%mem=46gb
+%NProcShared=46
+
+#P opt=(ModRedundant,calcall,maxcycle=128,noeig,nomicro) scf=(xqc) iop(7/33=1) iop(2/9=2000) iop(7/127=-99) iop(8/117=-99) am1
+
+am1_opt
+
+0 2
+O      2.035960   -3.288880   -1.998323
+C      1.243100   -4.295248   -1.396425
+O      0.530815   -3.779675   -0.283816
+O      1.398786   -3.116197    0.620667
+H      1.421207   -2.715458   -2.487924
+H      0.536861   -4.697895   -2.127766
+H      1.898145   -5.099486   -1.051582
+C     -0.965495   -0.385336   -1.177537
+C     -0.074676   -0.121197    0.032745
+C     -2.339609    0.239590   -1.002834
+N      1.228544   -0.748710   -0.119857
+C      2.348592   -0.210866   -0.712923
+H     -1.075050   -1.465850   -1.329189
+H     -0.500718    0.012086   -2.086963
+H      0.047424    0.953113    0.201988
+H     -0.523168   -0.553488    0.933574
+H     -2.264294    1.325251   -0.884401
+H     -2.847055   -0.168196   -0.122756
+H     -2.963015    0.035886   -1.879058
+H      1.344649   -1.953684    0.253783
+S      2.506505    1.305687   -1.384181
+H      3.182884   -0.933172   -0.698424
+
+b 20 4 b
+b 20 11 b
+b 20 4 F
+b 20 11 F
+A 4 20 11 F
+
+
+--Link1--
+%chk=rxn_11889.chk
+%mem=46gb
+%NProcShared=46
+
+#P opt=(ModRedundant,ts,calcall,maxcycle=128,noeig,nomicro) scf=(xqc) iop(7/33=1) iop(2/9=2000) geom=check guess=mix pm7
+
+pm7_opt_ts_freeze
+
+0 2
+
+b 20 4 b
+b 20 11 b
+b 20 4 F
+b 20 11 F
+A 4 20 11 F
+
+
+--Link1--
+%chk=rxn_11889.chk
+%mem=46gb
+%NProcShared=46
+
+#P opt=(ts,calcall,maxcycle=256,noeig,nomicro,cartesian) scf=(xqc) iop(7/33=1) iop(2/9=2000) geom=check guess=mix
+external="/home/gridsan/oscarwu/code/RDMC-main/rdmc/external/xtb_tools/xtb_gaussian.pl --gfn 2 -P"
+
+xtb_opt_ts_free
+
+0 2
+
+
+
+
+
