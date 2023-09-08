@@ -9,7 +9,7 @@ Automated Workflow for High-Throughput Quantum Chemical Kinetics
 
 ### Copyright
 
-Copyright (c) 2023, Oscar Wu
+Copyright (c) 2023, Oscar Wu, Hao-Wei Pang, Jackson Burns, Xiaorui Dong, William H. Green
 
 
 #### Acknowledgements
