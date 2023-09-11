@@ -1,0 +1,8 @@
+name: qp_env
+channels:
+  - defaults
+  - conda-forge
+  - xiaoruidong
+dependencies:
+  - rdmc
+  - nodejs
